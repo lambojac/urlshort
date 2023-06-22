@@ -5,7 +5,7 @@ const MONGODB = process.env.MONGODB
 
 function  connectionMongoDB(){
     mongoose.connect(MONGODB ,{
-        serverSelectionTimeoutMS: 30000})
+        useNewUrlParser: true, useUnifiedTopology: true })
 
     mongoose.connection.on('connected', () =>{
         logger.info('connection to mongodb successful')
